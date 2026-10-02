@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ua.requestflow.MainController"
+            styleClass="page">
+
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              styleClass="navbar">
+
+            <Label text="RequestFlow"
+                   styleClass="logo-small"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Головна"
+                    onAction="#openHome"
+                    styleClass="nav-button"/>
+
+            <Button text="Мої заявки"
+                    onAction="#openApplications"
+                    styleClass="nav-button"/>
+
+            <Button text="Вийти"
+                    onAction="#openLogin"
+                    styleClass="nav-button"/>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="18"
+              maxWidth="650"
+              styleClass="form-container">
+
+            <Label text="Створення заявки"
+                   styleClass="big-title"/>
+
+            <Label text="Опишіть проблему або питання, яке потрібно вирішити."
+                   styleClass="description"/>
+
+            <VBox spacing="7">
+
+                <Label text="Тема заявки"/>
+
+                <TextField fx:id="applicationTitleField"
+                           promptText="Наприклад: Не працює авторизація"
+                           prefHeight="42"/>
+
+            </VBox>
+
+            <HBox spacing="20">
+
+                <VBox spacing="7"
+                      HBox.hgrow="ALWAYS">
+
+                    <Label text="Категорія"/>
+
+                    <ComboBox fx:id="categoryComboBox"
+                              promptText="Оберіть категорію"
+                              maxWidth="Infinity"
+                              prefHeight="42"/>
+
+                </VBox>
+
+                <VBox spacing="7"
+                      HBox.hgrow="ALWAYS">
+
+                    <Label text="Пріоритет"/>
+
+                    <ComboBox fx:id="priorityComboBox"
+                              promptText="Оберіть пріоритет"
+                              maxWidth="Infinity"
+                              prefHeight="42"/>
+
+                </VBox>
+
+            </HBox>
+
+            <VBox spacing="7">
+
+                <Label text="Опис заявки"/>
+
+                <TextArea fx:id="descriptionArea"
+                          promptText="Детально опишіть проблему..."
+                          prefHeight="180"
+                          wrapText="true"/>
+
+            </VBox>
+
+            <HBox spacing="10">
+
+                <Button text="Скасувати"
+                        onAction="#openApplications"
+                        prefWidth="150"
+                        prefHeight="42"
+                        styleClass="secondary-button"/>
+
+                <Button text="Створити заявку"
+                    fx:id="createApplicationButton"
+                        onAction="#handleCreateApplication"
+                        prefWidth="200"
+                        prefHeight="42"
+                        styleClass="primary-button"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

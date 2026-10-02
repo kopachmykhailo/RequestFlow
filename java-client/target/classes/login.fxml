@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ua.requestflow.MainController"
+           styleClass="page">
+
+    <VBox alignment="CENTER"
+          spacing="18"
+          maxWidth="380"
+          styleClass="auth-card">
+
+        <Label text="RequestFlow"
+               styleClass="logo"/>
+
+        <Label text="Вхід до системи"
+               styleClass="page-title"/>
+
+        <Label text="Увійдіть, щоб працювати із заявками"
+               styleClass="description"/>
+
+        <VBox spacing="7">
+
+            <Label text="Email"/>
+
+            <TextField fx:id="loginEmailField"
+                       promptText="Введіть email"
+                       prefHeight="42"/>
+
+        </VBox>
+
+        <VBox spacing="7">
+
+            <Label text="Пароль"/>
+
+            <PasswordField fx:id="loginPasswordField"
+                           promptText="Введіть пароль"
+                           prefHeight="42"/>
+
+        </VBox>
+
+        <Button text="Увійти"
+                onAction="#handleLogin"
+                maxWidth="Infinity"
+                prefHeight="42"
+                styleClass="primary-button"/>
+
+        <Label text="Ще немає акаунта?"
+               styleClass="description"/>
+
+        <Button text="Зареєструватися"
+                onAction="#openRegister"
+                maxWidth="Infinity"
+                prefHeight="40"
+                styleClass="secondary-button"/>
+
+    </VBox>
+
+</StackPane>

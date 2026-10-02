@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firebase_uid": "admin-firebase-admin1",
+      "name": "Адміністратор",
+      "email": "admin1",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "firebase_uid": "rbTSSyvzFBesT4fad2SbZcMF7kL2",
+      "name": "123",
+      "email": "123@gmail.com",
+      "role": "user"
+    }
+  ],
+  "applications": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "firebase_uid": "rbTSSyvzFBesT4fad2SbZcMF7kL2",
+      "user_name": "123",
+      "title": "1",
+      "category": "Питання",
+      "priority": "Середній",
+      "description": "шо робити",
+      "status": "Виконано",
+      "admin_response": "удаліть доту"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "firebase_uid": "rbTSSyvzFBesT4fad2SbZcMF7kL2",
+      "user_name": "123",
+      "title": "1",
+      "category": "Помилка",
+      "priority": "Високий",
+      "description": "хелп",
+      "status": "Нова",
+      "admin_response": ""
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ua.requestflow.MainController"
+            styleClass="page">
+
+    <top>
+
+        <HBox alignment="CENTER_LEFT"
+              spacing="20"
+              styleClass="navbar">
+
+            <Label text="RequestFlow"
+                   styleClass="logo-small"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Головна"
+                    onAction="#openHome"
+                    styleClass="nav-button"/>
+
+            <Button text="Мої заявки"
+                    fx:id="applicationsNavButton"
+                    onAction="#openApplications"
+                    styleClass="nav-button"/>
+
+            <Button text="Створити заявку"
+                    fx:id="navbarCreateApplicationButton"
+                    onAction="#openCreateApplication"
+                    styleClass="primary-button"/>
+
+            <Button text="Вийти"
+                    onAction="#openLogin"
+                    styleClass="nav-button"/>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox spacing="20"
+              styleClass="content">
+
+            <HBox alignment="CENTER_LEFT"
+                        spacing="15"
+                        styleClass="filter-bar">
+
+                <Label fx:id="applicationsTitleLabel"
+                       text="Мої заявки"
+                       styleClass="big-title"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <TextField fx:id="applicationsSearchField"
+                           promptText="Пошук заявок..."
+                           onAction="#handleApplicationSearch"
+                           prefWidth="220"/>
+
+                <ComboBox fx:id="applicationFilterCategoryComboBox"
+                          prefWidth="180"
+                          promptText="Категорія"/>
+
+                <ComboBox fx:id="applicationFilterStatusComboBox"
+                          prefWidth="165"
+                          promptText="Статус"/>
+
+                <Button fx:id="newApplicationButton"
+                        text="Нова заявка"
+                        onAction="#openCreateApplication"
+                        styleClass="primary-button"/>
+
+            </HBox>
+
+            <TableView fx:id="applicationsTable"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="idColumn"
+                                 text="№"
+                                 prefWidth="60"/>
+
+                    <TableColumn fx:id="titleColumn"
+                                 text="Тема"
+                                 prefWidth="260"/>
+
+                    <TableColumn fx:id="categoryColumn"
+                                 text="Категорія"
+                                 prefWidth="170"/>
+
+                    <TableColumn fx:id="priorityColumn"
+                                 text="Пріоритет"
+                                 prefWidth="110"/>
+
+                    <TableColumn fx:id="statusColumn"
+                                 text="Статус"
+                                 prefWidth="140"/>
+
+                    <TableColumn fx:id="responseColumn"
+                                 text="Відповідь"
+                                 prefWidth="220"/>
+
+                </columns>
+
+            </TableView>
+
+            <HBox spacing="10"
+                        alignment="CENTER_LEFT"
+                        styleClass="application-actions">
+
+                <Label text="Вибрана заявка:"/>
+
+                <ComboBox fx:id="applicationStatusComboBox"
+                          promptText="Статус"
+                          prefWidth="180"/>
+
+                <TextField fx:id="adminResponseField"
+                           promptText="Відповідь користувачу"
+                           prefWidth="300"/>
+
+                <Button fx:id="updateStatusButton"
+                        text="Зберегти статус"
+                        onAction="#handleStatusUpdate"
+                        styleClass="primary-button"/>
+
+                <Button fx:id="sendResponseButton"
+                        text="Відправити відповідь"
+                        onAction="#handleAdminReply"
+                        styleClass="primary-button"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ua.requestflow.MainController"
+           styleClass="page">
+
+    <VBox alignment="CENTER"
+          spacing="16"
+          maxWidth="400"
+          styleClass="auth-card">
+
+        <Label text="RequestFlow"
+               styleClass="logo"/>
+
+        <Label text="Створення акаунта"
+               styleClass="page-title"/>
+
+        <VBox spacing="7">
+
+            <Label text="Ім'я"/>
+
+            <TextField fx:id="registerNameField"
+                       promptText="Введіть ім'я"
+                       prefHeight="42"/>
+
+        </VBox>
+
+        <VBox spacing="7">
+
+            <Label text="Email"/>
+
+            <TextField fx:id="registerEmailField"
+                       promptText="Введіть email"
+                       prefHeight="42"/>
+
+        </VBox>
+
+        <VBox spacing="7">
+
+            <Label text="Пароль"/>
+
+            <PasswordField fx:id="registerPasswordField"
+                           promptText="Створіть пароль"
+                           prefHeight="42"/>
+
+        </VBox>
+
+        <VBox spacing="7">
+
+            <Label text="Повторіть пароль"/>
+
+            <PasswordField fx:id="registerConfirmPasswordField"
+                           promptText="Повторіть пароль"
+                           prefHeight="42"/>
+
+        </VBox>
+
+        <Button text="Зареєструватися"
+            fx:id="registerButton"
+                onAction="#handleRegister"
+                maxWidth="Infinity"
+                prefHeight="42"
+                styleClass="primary-button"/>
+
+        <Button text="Повернутися до входу"
+                onAction="#openLogin"
+                maxWidth="Infinity"
+                prefHeight="40"
+                styleClass="secondary-button"/>
+
+    </VBox>
+
+</StackPane>
